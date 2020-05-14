@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require('connect.php');
 
 function dd($value){ //to be deleted used for development purpose
@@ -92,7 +93,7 @@ function create($table, $data){
     }
     
     $stmt = executeQuery($sql, $data);
-    $id = $stmt->insert_id;
+    $id = mysqli_insert_id($conn);
     return $id;
 }
 
@@ -138,5 +139,3 @@ $data = [
     'password' => 'abcd@1234'
 ];
 
-$id = delete('users', 2);
-dd($id);
