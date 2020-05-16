@@ -1,3 +1,4 @@
+<?php include("../../path.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,65 +12,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <!-- Admin Styling -->
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
 
-    <title>Admin Section - Add Posts</title>
+    <title>Admin Section - Add User</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1 class="logo-text"><span>Dee</span>Blogs</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class = "nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    Deep Maheshwari
-                <i class="fa fa-chevron-down" style="font-size: .8em"></i>
-            </a>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#" class="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
 
+    <?php include(ROOT_PATH."/app/includes/adminHeader.php"); ?>
     <!-- Admin Page-Wrapper -->
     <div class="admin-wrapper">
 
         <!-- Left Sidebar -->
-        <div class="left-sidebar">
-            <ul>
-                <li><a href="../Posts/index.html">Manage Posts</a></li>
-                <li><a href="/index.html">Manage Users</a></li>
-                <li><a href="../Topics/index.html">Manage Topics</a></li>
-            </ul>
-
-        </div>
+        <?php include(ROOT_PATH."/app/includes/adminSidebar.php"); ?>
 
         <!-- Admin Content -->
         <div class="admin-content">
             <div class="button-group">
-                <a href="create.html" class="btn btn-big">Add User</a>
-                <a href="index.html" class="btn btn-big">Manage Users</a>
+                <a href="create.php" class="btn btn-big">Add User</a>
+                <a href="index.php" class="btn btn-big">Manage Users</a>
             </div>
 
             <div class="content">
 
-                <h2 class="page-title">Manage Users</h2>
+                <h2 class="page-title">Create User</h2>
 
-                <form action="create.html" method="post">
+                <form action="create.php" method="post">
                     
                     <div>
                         <label>Username</label>
@@ -100,7 +71,7 @@
                     </div>
                     
                     <div>
-                        <button type="submit" class="btn btn-big" >Add Post</button>
+                        <button type="submit" class="btn btn-big" >Add User</button>
                     </div>
                 </form>
             </div>
@@ -116,6 +87,7 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
 
     <!-- Custom Script -->
-    <script src="../../js/scripts.js"></script>
+    <script src="../../assets/js/scripts.js"></script>
 </body>
 </html>
+

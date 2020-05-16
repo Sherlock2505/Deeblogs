@@ -118,7 +118,7 @@ function update($table, $id, $data){
     $sql = $sql. " WHERE id=?";
     $data['id'] = $id;
     $stmt = executeQuery($sql, $data);
-    return $stmt->affected_rows;
+    return mysqli_insert_id($conn);
 }
 
 
@@ -132,10 +132,10 @@ function delete($table, $id){
     return $stmt->affected_rows;
 }
 
-$data = [
-    'admin' => 1,
-    'username' => 'Deeblogger',
-    'email' => 'deeblogger@gmail.com',
-    'password' => 'abcd@1234'
-];
+// $data = [
+//     'admin' => 1,
+//     'username' => 'Deeblogger',
+//     'email' => 'deeblogger@gmail.com',
+//     'password' => 'abcd@1234'
+// ];
 
