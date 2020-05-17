@@ -1,6 +1,16 @@
 <?php 
     include("path.php");
     include(ROOT_PATH."/app/controllers/topics.php");
+
+    $posts = array();
+    $postsTitle = 'Recent Posts';    
+
+    if(isset($_POST['search-term'])){
+        $posts = searchPosts($_POST['search-term']);
+        $postsTitle = "You searched for '". $_POST['search term']."'";
+    }else{
+        $posts = getPublishedPosts();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,55 +45,17 @@
             <i class="fas fa-chevron-right next"></i>
             <div class="post-wrapper">
 
+                <?php foreach ($posts as $post): ?>
                 <div class="post">
-                    <img src="assets/images/img1.jpg" alt="" class="slider-image">
+                    <img src="<?php echo BASE_URL.'/assets/images/'.$post['image']; ?>" alt="" class="slider-image">
                     <div class="post-info">
-                        <h4><a href="single.html">Hey there this is my new Website!</a></h4>
-                        <i class="far fa-user">Deep Maheshwari</i>
+                        <h4><a href="single.html"><?php echo $post['title']; ?></a></h4>
+                        <i class="far fa-user"><?php echo $post['username']; ?></i>
                         &nbsp;
-                        <i class="far fa-calendar">May 1, 2000</i>
+                        <i class="far fa-calendar"><?php echo date('F j, Y',strtotime($post['created_at'])); ?></i>
                     </div>
                 </div>
-
-                <div class="post">
-                    <img src="assets/images/img1.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html">Hey there this is my new Website!</a></h4>
-                        <i class="far fa-user">Deep Maheshwari</i>
-                        &nbsp;
-                        <i class="far fa-calendar">May 1, 2000</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="assets/images/img1.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html">Hey there this is my new Website!</a></h4>
-                        <i class="far fa-user">Deep Maheshwari</i>
-                        &nbsp;
-                        <i class="far fa-calendar">May 1, 2000</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="assets/images/img1.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html">Hey there this is my new Website!</a></h4>
-                        <i class="far fa-user">Deep Maheshwari</i>
-                        &nbsp;
-                        <i class="far fa-calendar">May 1, 2000</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="assets/images/img1.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html">Hey there this is my new Website!</a></h4>
-                        <i class="far fa-user">Deep Maheshwari</i>
-                        &nbsp;
-                        <i class="far fa-calendar">May 1, 2000</i>
-                    </div>
-                </div>
+                <?php endforeach ?>
 
             </div>
         </div>
@@ -95,72 +67,29 @@
             <div class="main-content">
                 <h1 class="recent-post-title">Recent Posts</h1>
 
+                <?php foreach ($posts as $post): ?>
                 <div class="post clearfix">
-                    <img src="assets/images/img2.jpg" alt="" class="post-image">
+                    <img src="<?php echo BASE_URL.'/assets/images/'.$post['image']; ?>" alt="" class="post-image">
                     <div class="post-preview">
-                        <h2><a href="single.html">The heaven is here come and taste it.</a></h2>
-                        <i class="far fa-user">Deep Maheshwari</i>
+                        <h2><a href="single.html"></a><?php echo $post['title']; ?></h2>
+                        <i class="far fa-user"><?php echo $post['username']; ?></i>
                         &nbsp;
-                        <i class="far calendar">May 1, 2000</i>
+                        <i class="far calendar"><?php echo date('F j, Y',strtotime($post['created_at'])); ?></i>
                         <p class="preveiw-text">
-                            The following code has three sections. Each section has been labelled on top using a comment and the three are variables, actions and functions. 
-                            So in your admin_functions.php file, add the following code to it but make sure you split it accordingly as indicated below using the comments.
+                            <?php echo html_entity_decode(substr($post['body'], 0, 150). '...'); ?>
                         </p>
                         <a href="single.html" class="btn read-more">Read More</a>
                     </div>
                 </div>
-
-                <div class="post clearfix">
-                    <img src="assets/images/img2.jpg" alt="" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="single.html">The heaven is here come and taste it.</a></h2>
-                        <i class="far fa-user">Deep Maheshwari</i>
-                        &nbsp;
-                        <i class="far calendar">May 1, 2000</i>
-                        <p class="preveiw-text">
-                            The following code has three sections. Each section has been labelled on top using a comment and the three are variables, actions and functions. 
-                            So in your admin_functions.php file, add the following code to it but make sure you split it accordingly as indicated below using the comments.
-                        </p>
-                        <a href="single.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="assets/images/img2.jpg" alt="" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="single.html">The heaven is here come and taste it.</a></h2>
-                        <i class="far fa-user">Deep Maheshwari</i>
-                        &nbsp;
-                        <i class="far calendar">May 1, 2000</i>
-                        <p class="preveiw-text">
-                            The following code has three sections. Each section has been labelled on top using a comment and the three are variables, actions and functions. 
-                            So in your admin_functions.php file, add the following code to it but make sure you split it accordingly as indicated below using the comments.
-                        </p>
-                        <a href="single.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="assets/images/img2.jpg" alt="" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="single.html">The heaven is here come and taste it.</a></h2>
-                        <i class="far fa-user">Deep Maheshwari</i>
-                        &nbsp;
-                        <i class="far calendar">May 1, 2000</i>
-                        <p class="preveiw-text">
-                            The following code has three sections. Each section has been labelled on top using a comment and the three are variables, actions and functions. 
-                            So in your admin_functions.php file, add the following code to it but make sure you split it accordingly as indicated below using the comments.
-                        </p>
-                        <a href="single.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+                
 
             </div>
 
             <div class="sidebar">
                 <div class="section search">
                     <h2 class="section-title">Search</h2>
-                    <form action="index.html" method="post">
+                    <form action="index.php" method="post">
                         <input type="text" name="search-term" class="text-input" placeholder="Search....">
                     </form>
                 </div>

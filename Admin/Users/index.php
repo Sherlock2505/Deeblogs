@@ -1,4 +1,5 @@
 <?php include("../../path.php"); ?>
+<?php include(ROOT_PATH."/app/controllers/users.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +40,7 @@
 
             <div class="content">
 
+                <?php include(ROOT_PATH."/app/includes/messages.php"); ?>
                 <h2 class="page-title">Manage User</h2>
 
                 <table>
@@ -49,20 +51,15 @@
                         <th colspan="2">Action</th>
                     </thead>
                     <tbody>
+                        <?php foreach ($admin_users as $key => $user): ?>
                         <tr>
-                            <td>1</td>
-                            <td>Deep</td>
-                            <td>Admin</td>
-                            <td><a href="#" class="edit">Edit</a></td>
-                            <td><a href="#" class="delete">Delete</a></td>
+                            <td><?php echo $key + 1?></td>
+                            <td><?php echo $user['username']; ?></td>
+                            <td><?php echo $user['email']; ?></td>
+                            <td><a href="edit.php?id=<?php echo $user['id']; ?>" class="edit">Edit</a></td>
+                            <td><a href="index.php?delete_id=<?php echo $user['id']; ?>" class="delete">Delete</a></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>DeeBlogger</td>
-                            <td>Deputy Admin</td>
-                            <td><a href="#" class="edit">Edit</a></td>
-                            <td><a href="#" class="delete">Delete</a></td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

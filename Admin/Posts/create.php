@@ -82,6 +82,7 @@
                         <?php else: ?>
                             <label>
                                 <input type="checkbox" name="published" checked>
+                                Publish
                             </label>
                         <?php endif; ?>
                     </div>
