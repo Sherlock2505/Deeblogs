@@ -29,3 +29,5 @@ function validatePost($post){
 
     return $errors;
 }
+
+?>

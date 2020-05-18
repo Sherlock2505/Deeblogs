@@ -21,3 +21,5 @@ function validateTopic($topics){
 
     return $errors;
 }
+
+?>

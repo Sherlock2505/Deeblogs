@@ -295,12 +295,26 @@ header .menu-toggle{
     width: 40%;
     height: 100%;
     float: left;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
 }
 
 .content .main-content .post .post-preveiw{
     width: 60%;
     padding: 10px;
     float: right;
+}
+
+.content .main-content .post .post-preveiw i{
+    color: #757575;
+    font-size: 0.8em;
+}
+
+.content .main-content .post .preveiw-text{
+    line-height: 1.5em;
+    font-size: 1.03em;
+    color:#444;
 }
 
 .content .main-content .recent-post-title{

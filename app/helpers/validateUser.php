@@ -48,3 +48,5 @@ function validateLogin($user){
     
     return $errors;
 }
+
+?>
