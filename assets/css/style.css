@@ -325,7 +325,7 @@ header .menu-toggle{
     float: left;
 }
 
-.content .sidebar .single{
+.content .sidebar.single{
     padding: 0px 10px;
 }
 .content .sidebar .section{

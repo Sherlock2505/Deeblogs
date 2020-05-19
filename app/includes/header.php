@@ -17,7 +17,7 @@
                     </a>
                     <ul>
                         <?php if($_SESSION['admin']): ?>
-                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="<?php echo BASE_URL.'/Admin/dashboard.php'?>">Dashboard</a></li>
                         <?php endif; ?>
                         <li><a href="<?php echo BASE_URL.'/logout.php'?>" class="logout">Logout</a></li>
                     </ul>
