@@ -11,7 +11,7 @@
     }
     else if(isset($_POST['search-term'])){
         $posts = searchPosts($_POST['search-term']);
-        $postsTitle = "You searched for '". $_POST['search term']."'";
+        $postsTitle = "You searched for '". $_POST['search-term']."'";
     }else{
         $posts = getPublishedPosts();
     }
