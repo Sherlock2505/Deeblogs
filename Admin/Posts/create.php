@@ -15,6 +15,7 @@ adminOnly();
     <!-- Google-fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
+
     <!-- Custom Styling -->
     <link rel="stylesheet" href="../../assets/css/style.css">
 
@@ -54,7 +55,7 @@ adminOnly();
 
                     <div>
                         <label>Body</label>
-                        <textarea name="body" id="body" ><?php echo $body; ?></textarea>
+                        <textarea name="body" id="body"><?php echo $body; ?></textarea>
                     </div>
 
                     <div>
@@ -102,7 +103,9 @@ adminOnly();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 
     <!-- Ckeditor -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script> -->
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script>CKEDITOR.replace('body');</script>
 
     <!-- Custom Script -->
     <script src="../../assets/js/scripts.js"></script>
